@@ -90,11 +90,11 @@ extension ViPlayer: UICollectionViewDelegate, UICollectionViewDataSource, UIColl
             videoCell.resumePlayer()
             currentPlayer = videoCell.player
             currentPlayerIndexPath = indexPath
-            currentPlayer?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: .main) { [weak self] time in
+            currentPlayer?.addPeriodicTimeObserver(forInterval: CMTime(seconds: 1, preferredTimescale: 10), queue: .main) { [weak self, weak videoCell] time in
                 guard let duration = self?.currentPlayer?.currentItem?.duration.seconds, duration > 0 else {
                     return
                 }
-                videoCell.progressBar.progress = CGFloat(time.seconds / duration)
+                videoCell?.progressBar.progress = CGFloat(time.seconds / duration)
             }
         }
     }
