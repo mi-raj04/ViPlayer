@@ -6,7 +6,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-public class VPlayerUiKit: UIViewController {
+public class ViPlayer: UIViewController {
 
     public var collectionView: UICollectionView!
    
@@ -17,7 +17,7 @@ public class VPlayerUiKit: UIViewController {
     
     public var videoPlayers: [URL: AVPlayer] = [:]
     
-    public init(collectionView: UICollectionView?, currentPlayer: AVPlayer? = nil, currentPlayerIndexPath: IndexPath? = nil, videoURLs: [URL], videoPlayers: [URL : AVPlayer] = [:]) {
+    public init(collectionView: UICollectionView? = nil, currentPlayer: AVPlayer? = nil, currentPlayerIndexPath: IndexPath? = nil, videoURLs: [URL], videoPlayers: [URL : AVPlayer] = [:]) {
         self.collectionView = collectionView
         self.currentPlayer = currentPlayer
         self.currentPlayerIndexPath = currentPlayerIndexPath
@@ -63,7 +63,7 @@ public class VPlayerUiKit: UIViewController {
     }
 }
 
-extension VPlayerUiKit: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+extension ViPlayer: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     
     public func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return videoURLs.count

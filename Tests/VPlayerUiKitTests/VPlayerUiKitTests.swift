@@ -1,5 +1,5 @@
 import XCTest
-@testable import VPlayerUiKit
+@testable import VPlayerUIKit
 
 final class VPlayerUiKitTests: XCTestCase {
     func testExample() throws {
