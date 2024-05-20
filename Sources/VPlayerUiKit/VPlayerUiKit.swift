@@ -58,6 +58,7 @@ public class ViPlayer: UIViewController {
         collectionView = UICollectionView(frame: view.bounds, collectionViewLayout: layout)
         collectionView.delegate = self
         collectionView.dataSource = self
+        collectionView.isPagingEnabled = true
         collectionView.register(CollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         view.addSubview(collectionView)
     }
