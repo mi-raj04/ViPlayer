@@ -141,7 +141,6 @@ public class CollectionViewCell: UICollectionViewCell {
 
     required init?(coder: NSCoder) {
         super.init(coder: coder)
-        setupProgressBar()
     }
 
     private func setupProgressBar() {
@@ -167,6 +166,8 @@ public class CollectionViewCell: UICollectionViewCell {
             self?.player?.seek(to: .zero)
             self?.player?.play()
         }
+        
+        setupProgressBar()
     }
     
     deinit {
