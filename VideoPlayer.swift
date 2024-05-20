@@ -9,7 +9,7 @@ import UIKit
 import AVFoundation
 import AVKit
 
-public class VideoPlayer: UIViewController {
+public class VideoPlayer: UIView {
 
     public var collectionView: UICollectionView!
    
