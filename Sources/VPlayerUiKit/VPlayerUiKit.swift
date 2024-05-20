@@ -144,7 +144,7 @@ public class CollectionViewCell: UICollectionViewCell {
     }
 
     private func setupProgressBar() {
-        progressBar = VideoProgressBar(frame: CGRect(x: 0, y: bounds.height - 4, width: bounds.width, height: 4))
+        progressBar = VideoProgressBar(frame: CGRect(x: 0, y: bounds.height - 30, width: bounds.width, height: 4))
         layer.addSublayer(progressBar.layer)
     }
 
