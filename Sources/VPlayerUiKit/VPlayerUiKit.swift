@@ -6,30 +6,28 @@ import UIKit
 import AVFoundation
 import AVKit
 
-public class VPlayerUiKit: UIView {
+public class VPlayerUiKit: UIViewController {
 
     public var collectionView: UICollectionView!
    
     public var currentPlayer: AVPlayer?
     public var currentPlayerIndexPath: IndexPath?
 
-    public var videoURLs: [URL] = [
-
-    ]
-    
-    public init(){
-        
-    }
+    public var videoURLs: [URL] = []
     
     public var videoPlayers: [URL: AVPlayer] = [:]
     
-    
-    public init(collectionView: UICollectionView!, currentPlayer: AVPlayer? = nil, currentPlayerIndexPath: IndexPath? = nil, videoURLs: [URL], videoPlayers: [URL : AVPlayer]) {
+    public init(collectionView: UICollectionView?, currentPlayer: AVPlayer? = nil, currentPlayerIndexPath: IndexPath? = nil, videoURLs: [URL], videoPlayers: [URL : AVPlayer] = [:]) {
         self.collectionView = collectionView
         self.currentPlayer = currentPlayer
         self.currentPlayerIndexPath = currentPlayerIndexPath
         self.videoURLs = videoURLs
         self.videoPlayers = videoPlayers
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        super.init(coder: coder)
     }
     
     public override func viewDidLoad() {
@@ -128,14 +126,12 @@ public class VideoProgressBar: UIView {
     }
 }
 
-
 public class CollectionViewCell: UICollectionViewCell {
     public var player: AVPlayer?
     public var playerLayer: AVPlayerLayer?
     public var observer: Any?
     public var progressBar: VideoProgressBar!
 
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupProgressBar()
