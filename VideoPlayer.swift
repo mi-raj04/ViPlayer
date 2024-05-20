@@ -20,6 +20,10 @@ public class VideoPlayer: UIViewController {
 
     ]
     
+    public init(){
+        
+    }
+    
     public var videoPlayers: [URL: AVPlayer] = [:]
     
     

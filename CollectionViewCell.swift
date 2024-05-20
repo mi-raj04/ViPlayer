@@ -14,6 +14,7 @@ public class CollectionViewCell: UICollectionViewCell {
     public var observer: Any?
     public var progressBar: VideoProgressBar!
 
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupProgressBar()
